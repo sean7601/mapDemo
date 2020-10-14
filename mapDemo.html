@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>TASW Planning</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+
+    
+    <link rel="stylesheet" href="utils/leaflet-contextmenu.css"/>
+    <link rel="stylesheet" href="utils/leaflet.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="utils/L.Modal.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script src="utils/leaflet.js"></script>
+    <script src="utils/leaflet-heat.js"></script>
+    <script src="utils/leaflet-ellipse.js"></script>
+    <script src="utils/leaflet-maskgrid.js"></script>
+    <script src="utils/quadtree.js"></script>
+    <script src="utils/leaflet-vectorGrid.js"></script>
+    <script src="utils/L.Modal.js"></script>
+    <script src="world_bathymetry_contours_simplified.js"></script>
+
+
+    <script src="utils/largeWorld.js"></script>
+    <script src="utils/leaflet-contextmenu.js"></script>
+    
+
+      </head>
+
+	<style>
+		html, body {
+            height: 100%;
+            width: 100%;
+			margin: 0;
+		}
+		#map {
+			width: 100%;
+			height: 100%;
+        }
+
+	</style>
+
+	
+</head>
+<body>
+
+
+
+<div id='map'></div>
+<ul id="myMenu" class="contextMenu">
+    <li class="edit"><a href="#edit">Edit</a></li>
+    <li class="cut separator"><a href="#cut">Cut</a></li>
+    <li class="copy"><a href="#copy">Copy</a></li>
+    <li class="paste"><a href="#paste">Paste</a></li>
+    <li class="delete"><a href="#delete">Delete</a></li>
+    <li class="quit separator"><a href="#quit">Quit</a></li>
+</ul>
+
+<script src="baseMapDrawing.js"></script>
+
+
+<script>
+
+var addressPoints = new Array;
+for(var i=0;i<10000;i++){
+    addressPoints.push(new Object)
+    point = addressPoints[i]
+    point.lon = Math.random() * -30 - 20;
+    point.lat = Math.random() * 30 + 10;
+    if(point.lat > 25)
+        point.pd = 1;
+    else
+        point.pd = 0;
+}
+//drawHeatMap("pd")
+
+
+
+buoyUtils.createLine(40,-35,45,64,6000,1000)
+buoyUtils.createLine(35.35685895695,-34.5,45,64,1500,1000)
+
+$("#map").on("load", AOU.updateAOUs());
+				
+</script>
+
+
+
+</body>
+</html>
