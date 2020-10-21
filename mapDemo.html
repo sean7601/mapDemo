@@ -1,5 +1,6 @@
 
 <!DOCTYPE html>
+<html>
 <head>
 	
 	<title>TASW Planning</title>
@@ -26,9 +27,7 @@
     <script src="utils/quadtree.js"></script>
     <script src="utils/leaflet-vectorGrid.js"></script>
     <script src="utils/L.Modal.js"></script>
-    <script src="world_bathymetry_contours_simplified.js"></script>
-
-
+  
     <script src="utils/largeWorld.js"></script>
     <script src="utils/leaflet-contextmenu.js"></script>
     
@@ -64,31 +63,13 @@
     <li class="quit separator"><a href="#quit">Quit</a></li>
 </ul>
 
-<script src="baseMapDrawing.js"></script>
+<script src="baseMapDrawing.js"></script>\
+<script src="arc.js"></script>
+<script src="randomPath.js"></script>
 
 
 <script>
 
-var addressPoints = new Array;
-for(var i=0;i<10000;i++){
-    addressPoints.push(new Object)
-    point = addressPoints[i]
-    point.lon = Math.random() * -30 - 20;
-    point.lat = Math.random() * 30 + 10;
-    if(point.lat > 25)
-        point.pd = 1;
-    else
-        point.pd = 0;
-}
-//drawHeatMap("pd")
-
-
-
-buoyUtils.createLine(40,-35,45,64,6000,1000)
-buoyUtils.createLine(35.35685895695,-34.5,45,64,1500,1000)
-
-$("#map").on("load", AOU.updateAOUs());
-				
 </script>
 
 

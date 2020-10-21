@@ -37,27 +37,11 @@
         //draw bathy data
         //var oceanContours = L.geoJSON(bathy,{style:myStyle}).addTo(map);
 
-    var oceanContours2 = L.vectorGrid.slicer(bathy, {
-        vectorTileLayerStyles: {
-            sliced:{
-                weight: 1,
-                    opacity: .4,
-                    color: "#ff7800",
-                    stroke: true,
-                    fill: false}
-        }
-    })
-    //add listeners
-    map.on('mousemove', function(e) {
-        var lat = drawingUtils.formatLat(e.latlng.lat);
-        var lon = drawingUtils.formatLon(e.latlng.lng);
-        document.getElementById("latLongReadout").innerHTML =  lat + "/" + lon;
-        document.getElementById("pdReadout").innerHTML =  Math.round(Math.random()*100) + "% PD";
-    });
+
     
     map.on('click',function(e){
         console.log(e)
-        console.log(e.layers)
+        console.log(e.latlng)
     });
 
     //add corner readouts
