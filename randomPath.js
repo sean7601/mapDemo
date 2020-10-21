@@ -6,7 +6,7 @@ for(let i=0;i<trackQuantity;i++){
     let lat = 5 - 18 * Math.random();
     let lng = -93 + 11 * Math.random();
     startPoints.push({"lat":lat,"lng":lng});
-    L.circle([lat,lng]).addTo(map)
+    L.circle([lat,lng],{color:"green"}).addTo(map)
 }
 
 
@@ -17,7 +17,7 @@ for(let i=0;i<trackQuantity;i++){
     let lat = 10 - 20 * Math.random();
     let lng = -120 + 20 * Math.random();
     intermediatePoints.push({"lat":lat,"lng":lng});
-    L.circle([lat,lng]).addTo(map)
+    L.circle([lat,lng],{color:"orange"}).addTo(map)
 }
 
 
@@ -28,7 +28,7 @@ for(let i=0;i<trackQuantity;i++){
     let lat = 22 - 8 * Math.random();
     let lng = -117 + 11 * Math.random();
     endPoints.push({"lat":lat,"lng":lng});
-    L.circle([lat,lng]).addTo(map)
+    L.circle([lat,lng],{color:"blue"}).addTo(map)
 }
 
 
@@ -55,4 +55,6 @@ for(let i=0;i<trackQuantity;i++){
     connectedPaths.push(result)
 }
 
+
+console.log(connectedPaths)
 
