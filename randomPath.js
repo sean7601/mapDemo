@@ -52,6 +52,7 @@ for(let i=0;i<trackQuantity;i++){
     }
 
     L.polyline(result, {color: 'red',weight:.3}).addTo(map);
+    connectedPaths.push(result)
 }
 
 
